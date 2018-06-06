@@ -54,21 +54,20 @@
               <td class="icon">
                 <div class="hint">!</div>
               </td>
-              <td class="note">From v2.4 onwards, only Java 8 is supported 
-              (for J2ME CDC FP, v2.3 is the last stable version).
+              <td class="note">
+              Support for KNX IP Secure in Calimero v2.5 snapshots (experimental)<br>
+              
+                &emsp;<strong>NEW</strong>&nbsp; calimero-server with client-side KNX IP Secure Routing<br>
+                &emsp;<strong>NEW</strong>&nbsp; calimero-core with network links using KNX IP Secure Routing
+              
               </td>
             </tr>
           </table>
         </div>  
 
-        <p>Calimero is designed to operate on embedded systems. The minimum JRE requirements are
-          either Java 2 Micro-Edition CDC with the Foundation Profile (J2ME CDC FP), or Java SE 8 
-          with the compact1 profile. The libraries are compatible with Java
-          Standard-Edition (J2SE) environments commonly deployed on home computers.</p>
-
         <p>The libraries' objectives are to offer clean and lean interfaces to KNX functionality, including</p>
         <ul>
-          <li>KNXnet/IP tunneling, routing, local device management, and bus monitoring</li>          
+          <li>KNXnet/IP tunneling, routing, local device management, and bus monitoring</li>
           <li>KNX IP, KNX USB, KNX RF USB, TP-UART, and FT1.2 serial access</li>
           <li>Process communication</li>
           <li>Management procedures</li>
@@ -84,31 +83,38 @@
               <td class="icon">
                 <div class="hint">!</div>
               </td>
-              <td class="note">KNX communication protocols do not offer features of 
+              <td class="note">With the exception of KNX IP Secure, KNX communication protocols do not offer features of 
               cryptographic protocols, e.g., entity authentication. If you intend to permit external access, 
-              ensure security policies by applying appropriate mechanisms, e.g., use of a virtual private network (VPN).
+              ensure security policies by applying appropriate mechanisms (use a virtual private network (VPN)).
               </td>
             </tr>
           </table>
         </div>
 
+        <p>Calimero is designed to operate on embedded systems. The libraries are compatible with Java
+          Standard-Edition (J2SE) environments commonly deployed on home computers.
+
+         Minimum Java Runtime Environment (JRE) requirements:
+          <ul>
+          <li>Versions &le; 2.3 require J2ME CDC FP</li>
+          <li>Version 2.4 requires JRE 8 (profile compact1)</li>
+          <li>Version 2.5 (dev) requires JRE 9 (java.base)</li>
+          <ul></p>
+
         <h3 id="structure">Project Structure</h3>
         <p>
-          The project is structured into several repositories. Calimero Core is the main Java library. Being a library,
-          you can not "start" or "run" it like an ordinary application. (To do this, you might refer to the
-          Calimero Tools or the GUI). The library contains functionality to be invoked by user applications. It requires
-          KNX capable endpoints and some UI/task. Nevertheless, the library contains a method
-          <code>main</code> (<code>tuwien.auto.calimero.Settings.main</code>). 
-          It is used to show information about the library itself, like a header and version, which can also be
-          queried directly through methods of class Settings. To run applications which just use the Calimero library,
-          only calimero-x.jar is required.
+          The project is structured into several repositories. Calimero-core is the main Java library. (Being a library,
+          you can not simply "run" it like an ordinary application. For that, use the
+          calimero-tools or calimero-gui repositories). The core library contains functionality to be invoked by a user 
+          application. A setup also requires KNX capable endpoints, e.g., a KNXnet/IP server. To create applications which 
+          just use client functionality, only calimero-core-x.jar is required.
         </p>
-          Show information about the library in the terminal:
+          Show information about the core library on the command-line:
         <pre>$ java -jar "calimero-core-2.4-SNAPSHOT.jar"</pre>
 
         <h3 id="setup">Setup</h3>
         <p>
-          For running Java programs, you need a Java Runtime Environment (JRE) SE 8, together with any other third party
+          For running Java programs, you need a Java Runtime Environment (JRE), together with any other third party
           libraries you might want to use. For details how to set up Java, refer to dedicated SDK installation sites,
           for example the 
           <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="Install">
@@ -169,7 +175,7 @@
                 <div class="hint">!</div>
               </td>
               <td class="note">On Windows, the classpath entries of <code>-cp</code> are separated by a <code>;</code>,
-                on Linux <code>:</code> is used.
+                on Linux/MacOS <code>:</code> is used.
               </td>
             </tr>
           </table>

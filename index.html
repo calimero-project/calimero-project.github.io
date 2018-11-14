@@ -55,11 +55,11 @@
                 <div class="hint">!</div>
               </td>
               <td class="note">
-              Support for KNX IP Secure in Calimero v2.5 snapshots (experimental)<br>
-              
-                &emsp;<strong>NEW</strong>&nbsp; calimero-server with client-side KNX IP Secure Routing<br>
-                &emsp;<strong>NEW</strong>&nbsp; calimero-core with network links using KNX IP Secure Routing
-              
+              <strong>NEW</strong>&nbsp; KNX IP Secure (UDP) in Calimero v2.5 (snapshots)
+              <ul>
+                <li>Server support for client-side KNX IP Secure</li>
+                <li>Core library supports KNX IP Secure Tunneling, Routing, Device Management</li>
+              </ul>
               </td>
             </tr>
           </table>
@@ -67,8 +67,8 @@
 
         <p>The libraries' objectives are to offer clean and lean interfaces to KNX functionality, including</p>
         <ul>
-          <li>KNXnet/IP tunneling, routing, local device management, and bus monitoring</li>
-          <li>KNX IP, KNX USB, KNX RF USB, TP-UART, and FT1.2 serial access</li>
+          <li>KNXnet/IP (secure) tunneling, routing, local device management, and bus monitoring</li>
+          <li>KNX IP, KNX USB, KNX RF USB, TP-UART, and FT1.2 access</li>
           <li>Process communication</li>
           <li>Management procedures</li>
           <li>KNX property access</li>
@@ -85,7 +85,7 @@
               </td>
               <td class="note">With the exception of KNX IP Secure, KNX communication protocols do not offer features of 
               cryptographic protocols, e.g., entity authentication. If you intend to permit external access, 
-              ensure security policies by applying appropriate mechanisms (use a virtual private network (VPN)).
+              ensure security policies by applying appropriate mechanisms, e.g., use a virtual private network (VPN).
               </td>
             </tr>
           </table>
@@ -98,7 +98,7 @@
           <ul>
           <li>Versions &le; 2.3 require J2ME CDC FP</li>
           <li>Version 2.4 requires JRE 8 (profile compact1)</li>
-          <li>Version 2.5 (dev) requires JRE 9 (java.base)</li>
+          <li>Version 2.5 (dev) requires JRE 9 (java.base), recommended JRE 11 (java.base)</li>
           <ul></p>
 
         <h3 id="structure">Project Structure</h3>
@@ -110,15 +110,15 @@
           just use client functionality, only calimero-core-x.jar is required.
         </p>
           Show information about the core library on the command-line:
-        <pre>$ java -jar "calimero-core-2.4-SNAPSHOT.jar"</pre>
+        <pre>$ java -jar "calimero-core-2.5-SNAPSHOT.jar"</pre>
 
         <h3 id="setup">Setup</h3>
         <p>
           For running Java programs, you need a Java Runtime Environment (JRE), together with any other third party
-          libraries you might want to use. For details how to set up Java, refer to dedicated SDK installation sites,
-          for example the 
-          <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="Install">
-          Java installation guide</a>.
+          libraries you might want to use. Runtimes are available for download from
+          <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="Oracle">
+          Oracle</a>, as <a href="https://jdk.java.net" target="OpenJDK">
+          Open JDK builds</a>, and other vendors.
         </p>
         <p>
           Put the Calimero

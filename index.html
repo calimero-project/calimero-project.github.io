@@ -98,7 +98,7 @@
           <ul>
           <li>Versions &le; 2.3 require J2ME CDC FP</li>
           <li>Version 2.4 requires JRE 8 (profile compact1)</li>
-          <li>Version 2.5 (dev) requires JRE 9 (java.base), recommended JRE 11 (java.base)</li>
+          <li>Version 2.5 (dev) requires JRE 11 (java.base)</li>
           <ul></p>
 
         <h3 id="structure">Project Structure</h3>
@@ -107,18 +107,16 @@
           you can not simply "run" it like an ordinary application. For that, use the
           calimero-tools or calimero-gui repositories). The core library contains functionality to be invoked by a user 
           application. A setup also requires KNX capable endpoints, e.g., a KNXnet/IP server. To create applications which 
-          just use client functionality, only calimero-core-x.jar is required.
+          just use client functionality, only calimero-core is required.
         </p>
-          Show information about the core library on the command-line:
-        <pre>$ java -jar "calimero-core-2.5-SNAPSHOT.jar"</pre>
 
         <h3 id="setup">Setup</h3>
         <p>
           For running Java programs, you need a Java Runtime Environment (JRE), together with any other third party
-          libraries you might want to use. Runtimes are available for download from
+          libraries you might want to use. Runtimes are available for download as 
+          <a href="https://jdk.java.net" target="OpenJDK"> Open JDK builds</a>, or from
           <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="Oracle">
-          Oracle</a>, as <a href="https://jdk.java.net" target="OpenJDK">
-          Open JDK builds</a>, and other vendors.
+          Oracle</a> and other vendors.
         </p>
         <p>
           Put the Calimero
@@ -158,15 +156,19 @@
         </div>
 
 
-
         <p>Please refer to dedicated documentation for your particular execution environment.</p>
 
 
         <h3 id="usage">Usage</h3>
-        Calimero tools are executed in the terminal. Starting a search for KNXnet/IP devices is done via (replace
-        <code>x</code>
-        with your version):
-        <pre>$ java -cp "calimero-x.jar;calimero-tools-x.jar" tuwien.auto.calimero.tools.Discover -s</pre>
+        <p>
+        The README of each calimero repository/library provides further details on invocation, 
+        as well as using Gradle and Maven for building and execution.
+        </p>
+        Show information about the core library on the command-line:
+        <pre>$ java -jar "calimero-core-2.5-SNAPSHOT.jar"</pre>
+        
+        Calimero tools are executed in the terminal. Starting a search for KNXnet/IP devices is done via:
+        <pre>$ java -cp "calimero-2.5-SNAPSHOT.jar;calimero-tools-2.5-SNAPSHOT.jar" tuwien.auto.calimero.tools.Discover search</pre>
 
         <div class="marker">
           <table>

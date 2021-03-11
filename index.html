@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset='utf-8'>
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
@@ -14,8 +14,8 @@
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script type="text/javascript" charset="utf-8" src="javascripts/stickyMojo.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="javascripts/stickyMojo.js"></script>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
     <header>
       <h1>Calimero Project</h1>
       <h2>Free KNX network libraries</h2>
-      <h2>client - server - device</2>
+      <h2>client - server - device</h2>
 
       <section id="downloads" class="clearfix">
         <a href="https://github.com/calimero-project" id="view-on-github" class="button"><span>View on GitHub</span></a>
@@ -55,7 +55,7 @@
                 <div class="hint">!</div>
               </td>
               <td class="note">
-              <strong>NEW</strong>&nbsp; Calimero v2.5 snapshots support KNX IP Secure & Data Secure 
+              <strong>NEW</strong>&nbsp; Calimero v2.5 supports KNX IP Secure & Data Secure 
               </td>
             </tr>
           </table>
@@ -95,8 +95,8 @@
           <ul>
           <li>Versions &le; 2.3 require J2ME CDC FP</li>
           <li>Version 2.4 requires JRE 8 (profile compact1)</li>
-          <li>Version 2.5 (dev) requires JRE 11 (java.base)</li>
-          <ul></p>
+          <li>Version 2.5 requires JRE 11 (java.base)</li>
+          </ul>
 
         <h3 id="structure">Project Structure</h3>
         <p>
@@ -126,15 +126,14 @@
           <pre>$ jar -xf my-library.jar</pre>
 
           Alternatively, import the Calimero source code into your development environment.
-        </p>
         <p>When using KNXnet/IP and network interfaces, make sure that
-         <ul>
-           <li>you configured the network interfaces correctly,</li>
-           <li>you are using the intended network interface,</li>
-           <li>firewall settings don't block KNXnet/IP traffic.</li>
-         </ul>
+        <ul>
+          <li>you configured the network interfaces correctly,</li>
+          <li>you are using the intended network interface,</li>
+          <li>firewall settings don't block KNXnet/IP traffic.</li>
+        </ul>
 
-        The first two points are especially relevant on multi-homed computers, i.e., those having several installed
+        <p>The first two points are especially relevant on multi-homed computers, i.e., those having several installed
         network interfaces. Take care with NAT (Network Address Translation) and IPv6 addresses, because KNXnet/IP works
         with IPv4 by default.
         </p>
@@ -162,10 +161,10 @@
         as well as using Gradle and Maven for building and execution.
         </p>
         Show information about the core library on the command-line:
-        <pre>$ java -jar "calimero-core-2.5-SNAPSHOT.jar"</pre>
+        <pre>$ java -jar "calimero-core-2.5-M1.jar"</pre>
         
         Calimero tools are executed in the terminal. Starting a search for KNXnet/IP devices is done via:
-        <pre>$ java -cp "calimero-2.5-SNAPSHOT.jar;calimero-tools-2.5-SNAPSHOT.jar" tuwien.auto.calimero.tools.Discover search</pre>
+        <pre>$ java -cp "calimero-2.5-M1.jar;calimero-tools-2.5-M1.jar" tuwien.auto.calimero.tools.Discover search</pre>
 
         <div class="marker">
           <table>
@@ -199,7 +198,7 @@
     </div>
 
   </div>
-  <script type="text/javascript">
+  <script>
       $(document).ready(function(){
         $('#sidebar').stickyMojo({footerID: '#footer', contentID: '#main'});
       });

@@ -45,26 +45,13 @@
       <!--       <hr> -->
       <section id="main_content">
         <a id="introduction"></a>
-        <p>The Calimero project provides the KNX protocol stack for clients, 
+        <p>Calimero provides the KNX (secure) protocol stack for clients, 
         KNXnet/IP servers, and devices.</p>
-
-        <div class="marker">
-          <table>
-            <tr>
-              <td class="icon">
-                <div class="hint">!</div>
-              </td>
-              <td class="note">
-              <strong>NEW</strong>&nbsp; Calimero v2.5 supports KNX IP Secure & Data Secure 
-              </td>
-            </tr>
-          </table>
-        </div>  
 
         <p>The library's objective is to offer clean and lean interfaces to KNX functionality, including</p>
         <ul>
           <li>KNXnet/IP (secure) tunneling, routing, local device management, and bus monitoring</li>
-          <li>KNX IP, KNX USB, KNX RF USB, TP-UART, and FT1.2 access</li>
+          <li>Access over KNX IP, KNX USB, KNX RF USB, TP-UART, and FT1.2</li>
           <li>Process communication</li>
           <li>Management procedures</li>
           <li>KNX property access</li>
@@ -88,14 +75,14 @@
           </table>
         </div>
 
-        <p>Calimero is designed to operate on embedded systems. The library is compatible with Java
-          Standard-Edition (J2SE) environments commonly deployed on home computers.
+        <p>Calimero is designed to operate on embedded systems.
 
-         Minimum Java Runtime Environment (JRE) requirements:
+         Minimum Java runtime requirements:
           <ul>
           <li>Versions &le; 2.3 require J2ME CDC FP</li>
           <li>Version 2.4 requires JRE 8 (profile compact1)</li>
-          <li>Version 2.5 requires JRE 11 (java.base)</li>
+          <li>Version 2.5 requires JDK 11 (java.base), support for KNX IP Secure & Data Secure</li>
+          <li>Version 3.0 (snapshot) requires JDK 17 (java.base), Java module support</li>
           </ul>
 
         <h3 id="structure">Project Structure</h3>
@@ -109,10 +96,8 @@
 
         <h3 id="setup">Setup</h3>
         <p>
-          For running Java programs, you need a Java Runtime Environment (JRE), together with any other third party
-          libraries you might want to use. Runtimes are available for download as 
-          <a href="https://jdk.java.net" target="OpenJDK"> Open JDK builds</a>, or from
-          <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="Oracle">
+          For running Java programs, you need a <a href="https://jdk.java.net" target="OpenJDK">Java runtime</a>, 
+          together with any other third party libraries you might want to use. Runtimes are available for download from
           Oracle</a> and other vendors.
         </p>
         <p>
@@ -126,6 +111,10 @@
           <pre>$ jar -xf my-library.jar</pre>
 
           Alternatively, import the Calimero source code into your development environment.
+        </p>
+        <p>The README of each repository provides further details building Calimero using Gradle.</p>
+        
+        
         <p>When using KNXnet/IP and network interfaces, make sure that
         <ul>
           <li>you configured the network interfaces correctly,</li>
@@ -157,14 +146,18 @@
 
         <h3 id="usage">Usage</h3>
         <p>
-        The README of each calimero repository/library provides further details on invocation, 
-        as well as using Gradle and Maven for building and execution.
+        The README of each Calimero repository provides further details on invocation, 
+        as well as using the Gradle build tool for execution.
         </p>
         Show information about the core library on the command-line:
-        <pre>$ java -jar "calimero-core-2.6-SNAPSHOT.jar"</pre>
+        <pre>$ java -jar "calimero-core-3.0-SNAPSHOT.jar"</pre>
+        Calimero 3.0 is modularized; using the Java module system, the command-line would look like this:
+        <pre>$ java -p . -m io.calimero.core</pre>
         
         Calimero tools are executed in the terminal. Starting a search for KNXnet/IP devices is done via:
-        <pre>$ java -cp "calimero-2.6-SNAPSHOT.jar;calimero-tools-2.6-SNAPSHOT.jar" tuwien.auto.calimero.tools.Discover search</pre>
+        <pre>$ java -cp "calimero-core-3.0-SNAPSHOT.jar;calimero-tools-3.0-SNAPSHOT.jar" io.calimero.tools.Discover search</pre>
+        Or, using the module path:
+        <pre>$ java -p . -m io.calimero.tools discover</pre>
 
         <div class="marker">
           <table>
